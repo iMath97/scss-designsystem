@@ -1,0 +1,8 @@
+/*
+ * first-letter caps
+ */
+%caps {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,21 @@
+// example, replace this
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Raleway:ital,wght@0,500;0,600&family=Inter:wght@400;600;800;900&display=swap");
+
+// $font-primary: "Inter", sans-serif;
+// $font-secondary: "Montserrat", sans-serif;
+// $font-quaternary: "Raleway", sans-serif;
+
+$weight: (
+  'x-light': 200,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semi-bold': 600,
+  'bold': 700,
+  'semi-black': 800,
+  'black': 900,
+);
+
+@function weight($var) {
+  @return map-get($map: $weight, $key: $var);
+}

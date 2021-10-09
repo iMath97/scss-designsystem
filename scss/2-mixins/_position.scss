@@ -1,0 +1,25 @@
+/*
+ *  position
+ */
+@mixin position($position: absolute, $top: null, $right: null, $bottom: null, $left: null, $transform: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+
+  @if $transform == XY or $transform == xy {
+    // center X/Y
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $transform == X or $transform == x {
+    // center X
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $transform == Y or $transform == y {
+    // center Y
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

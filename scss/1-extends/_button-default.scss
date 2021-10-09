@@ -1,0 +1,27 @@
+/*
+ *  button-default
+ */
+%btn {
+  display: inline-block;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in;
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem black;
+    border: 0;
+    outline: 0;
+  }
+  &:-moz-focus-inner {
+    box-shadow: 0 0 0 0.2rem black;
+    border: 0;
+    outline: 0;
+  }
+}
+
+button {
+  @extend %btn;
+}

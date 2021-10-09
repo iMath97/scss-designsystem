@@ -1,0 +1,10 @@
+// * A11y: hover, focus, moz-focus-inner
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content;
+  }
+  &::-moz-focus-inner {
+    @content;
+  }
+}

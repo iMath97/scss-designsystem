@@ -1,0 +1,45 @@
+@mixin custom-checkbox($icon: \29c8) {
+  & input {
+    // hide original checkbox
+    display: none;
+
+    &:checked ~ label::before {
+      // icon when checked
+      // content: "#{$icon}";
+      // content: "";
+
+      color: $secondary;
+      background-color: $black;
+      border: 1px solid $primary;
+      border-radius: 50%;
+    }
+  }
+
+  & label {
+    display: inline-block;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    line-height: 1.5;
+
+    cursor: pointer;
+
+    &::before {
+      // custom checkbox square
+      content: "\00a0"; /* Blank space */
+      display: inline-block;
+
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+
+      background: $body-bgc;
+      border: 1px solid $primary;
+
+      text-align: center;
+
+      transition: 0.3s;
+    }
+  }
+}

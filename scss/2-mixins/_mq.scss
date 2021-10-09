@@ -1,0 +1,35 @@
+/*
+  * Mobile first mq
+  *
+  * s: mobile
+  * m: tablet
+  * l: phablet
+  * xl: desktop
+  * xxl: desktop hd
+  */
+
+$bp: (
+  xs: 350px,
+  s: 400px,
+  m: 550px,
+  l: 750px,
+  xl: 1000px,
+  xxl: 1200px,
+  xxxl: 2500px,
+);
+
+@mixin mq($breakpoint, $mm: min, $wh: width) {
+  @if map-has-key($map: $bp, $key: $breakpoint) {
+    @media (#{$mm}-#{$wh}: #{map-get($bp, $breakpoint)}) {
+      @content;
+    }
+  }
+}
+
+@mixin mql($breakpoint, $mm: max, $wh: height) {
+  @if map-has-key($map: $bp, $key: $breakpoint) {
+    @media (#{$mm}-#{$wh}: #{map-get($bp, $breakpoint)}) and (orientation: landscape) {
+      @content;
+    }
+  }
+}
