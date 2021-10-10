@@ -1,0 +1,89 @@
+@import '../2-mixins/svg-colors';
+*,
+*::before,
+*::after {
+  @extend %caps;
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-color: #666 #201c29;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+main {
+  position: relative;
+}
+
+.container {
+  padding: 0 1rem;
+
+  @include mq(xl) {
+    max-width: 1600px;
+    margin: auto;
+    padding: 0 3rem;
+  }
+}
+
+// * set headings font-size
+$font-size: (2.6rem, 1.8rem, 1.4rem, 1rem, 1rem, 1rem);
+$font-size-mobile: (2.6rem, 1.8rem, 1.4rem, 1rem, 1rem, 1rem);
+$font-size-hd: (2.6rem, 1.8rem, 1.4rem, 1rem, 1rem, 1rem);
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: nth($font-size-mobile, $i);
+    //font-family: $font-primary;
+
+    @include mq(l) {
+      font-size: nth($font-size, $i);
+    }
+
+    @include mq(xxxl) {
+      font-size: nth($font-size-hd, $i);
+    }
+  }
+}
+h1 {
+  font-weight: weight(black);
+}
+h2 {
+  font-weight: weight(medium);
+}
+h5,
+h6 {
+  margin: 0;
+}
+h5 {
+  margin-bottom: 0.3rem;
+}
+h6 {
+  margin-top: 0.5rem;
+}
+
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: $font-secondary;
+}
+p {
+  @include mq(s) {
+    font-size: 1.1rem;
+  }
+}
+
+// * A11y
+// * hover, focus, moz-focus-inner
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content;
+  }
+  &::-moz-focus-inner {
+    @content;
+  }
+}
