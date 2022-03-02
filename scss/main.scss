@@ -14,10 +14,17 @@
 @import './3-base/colors';
 @import './3-base/typography';
 @import './3-base/variables';
+@import './3-base/utilities';
+@import './3-base/root';
 @import './3-base/base';
 
 @import './4-components/header';
+@import './4-components/form';
+@import './4-components/links';
+@import './4-components/list';
+@import './4-components/cards';
 @import './4-components/buttons';
 @import './4-components/cookies';
 @import './4-components/dialog';
+@import './4-components/accordion';
 @import './4-components/footer';
